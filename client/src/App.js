@@ -25,7 +25,7 @@ function App() {
     e.preventDefault();
   };
 
- const handleMouseMove = (e) => {
+ /*const handleMouseMove = (e) => {
     if (!isDragging || !containerRef.current) return;
     
     e.preventDefault();
@@ -34,7 +34,20 @@ function App() {
     const constrainedWidth = Math.min(Math.max(newLeftWidth, 5), 95);
     setLeftWidth(constrainedWidth);
   };
+*/
 
+  const handleMouseMove = useCallback((e) => {
+  if (!isDragging || !containerRef.current) return;
+
+  e.preventDefault();
+
+  const containerRect = containerRef.current.getBoundingClientRect();
+  const newLeftWidth =
+    ((e.clientX - containerRect.left) / containerRect.width) * 100;
+
+  const constrainedWidth = Math.min(Math.max(newLeftWidth, 5), 95);
+  setLeftWidth(constrainedWidth);
+}, [isDragging]);
    /*const handleMouseUp = () => {
     setIsDragging(false);
   };
