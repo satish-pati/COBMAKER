@@ -67,7 +67,7 @@ function App() {
         document.body.style.userSelect = '';
       }
     };
-  }, [isDragging]);
+  }, [isDragging,handleMouseMove]);
 
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', background: '#1e1e2f', color: '#fff' }}>
