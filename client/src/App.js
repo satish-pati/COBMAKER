@@ -25,7 +25,7 @@ function App() {
     e.preventDefault();
   };
 
-  const handleMouseMove = (e) => {
+  /*const handleMouseMove = (e) => {
     if (!isDragging || !containerRef.current) return;
     
     e.preventDefault();
@@ -34,7 +34,7 @@ function App() {
     const constrainedWidth = Math.min(Math.max(newLeftWidth, 5), 95);
     setLeftWidth(constrainedWidth);
   };
-
+*/
   const handleMouseUp = () => {
     setIsDragging(false);
   };
